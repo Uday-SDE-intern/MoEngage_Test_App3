@@ -1,0 +1,6 @@
+framework module Pods_MoEngage_Test_App_3 {
+  umbrella header "Pods-MoEngage_Test_App-3-umbrella.h"
+
+  export *
+  module * { export * }
+}
