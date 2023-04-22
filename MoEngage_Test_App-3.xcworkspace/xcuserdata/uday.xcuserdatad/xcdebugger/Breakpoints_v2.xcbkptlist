@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1C9ECAE5-9921-4DD3-B39B-F495B08F489D"
+            uuid = "3800DEB7-B07C-4D09-A21F-9A8DF1EF337B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MoEngage_Test_App-3/Config_API_Settings.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "Save(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3800DEB7-B07C-4D09-A21F-9A8DF1EF337B - 3de11ac948ea9a81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoEngage_Test_App_3.Config_API_Settings.Save(Any) -&gt; ()"
+                  moduleName = "MoEngage_Test_App-3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/UIKit/MoEngage_Test_App-3/MoEngage_Test_App-3/Config_API_Settings.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "3800DEB7-B07C-4D09-A21F-9A8DF1EF337B - 3de11ac948ea9a81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoEngage_Test_App_3.Config_API_Settings.Save(Any) -&gt; ()"
+                  moduleName = "MoEngage_Test_App-3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/UIKit/MoEngage_Test_App-3/MoEngage_Test_App-3/Config_API_Settings.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "239"
+                  endingLineNumber = "239"
+                  offsetFromSymbolStart = "224">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
