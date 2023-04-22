@@ -265,12 +265,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                    demoDict?.setValue(text, forKey: "le_s")
                    jsonString = dropDownTojSON(jsonString, expression, "le_s", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "le_s", "")
+                }
             }
             text = a_sChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "a_s")
                     jsonString = dropDownTojSON(jsonString, expression, "a_s", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "a_s", "")
                 }
             }
             text = dt_s_tChooseLabel.text
@@ -279,12 +285,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "dt_s_t")
                     jsonString = dropDownTojSON(jsonString, expression, "dt_s_t", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "dt_s_t", "")
+                }
             }
             text = le_tknChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "le_tkn")
                     jsonString = dropDownTojSON(jsonString, expression, "le_tkn", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "le_tkn", "")
                 }
             }
             text = d_s_r_iChooseLabel.text
@@ -293,12 +305,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "d_s_r_i")
                     jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", "")
+                }
             }
             text = p_f_tChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "p_f_t")
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_t", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "p_f_t", "")
                 }
             }
             text = p_f_sChooseLabel.text
@@ -307,12 +325,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "p_f_s")
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_s", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "p_f_s", "")
+                }
             }
             text = d_tChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "d_t")
                     jsonString = dropDownTojSON(jsonString, expression, "d_t", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "d_t", "")
                 }
             }
             text = e_b_cChooseLabel.text
@@ -321,19 +345,29 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "e_b_c")
                     jsonString = dropDownTojSON(jsonString, expression, "e_b_c", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "e_b_c", "")
+                }
             }
             text = e_e_tChooseLabel.text
             if let text_1 = text{
                 if(text_1 != choose){
                     demoDict?.setValue(text, forKey: "e_e_t")
-                    jsonString = dropDownTojSON(jsonString, expression, "e_b_c", text_1)
+                    jsonString = dropDownTojSON(jsonString, expression, "e_e_t", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "e_e_t", "")
+                }
+                
             }
             text = cid_exChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "cid_ex")
                     jsonString = dropDownTojSON(jsonString, expression, "cid_ex", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "cid_ex", "")
                 }
             }
             text = g_sChooseLabel.text
@@ -342,12 +376,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "g_s")
                     jsonString = dropDownTojSON(jsonString, expression, "g_s", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "g_s", "")
+                }
             }
             text = in_sChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "in_s")
                     jsonString = dropDownTojSON(jsonString, expression, "in_s", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "in_s", "")
                 }
             }
             text = m_s_tChooseLabel.text
@@ -356,12 +396,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "m_s_t")
                     jsonString = dropDownTojSON(jsonString, expression, "m_s_t", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "m_s_t", "")
+                }
             }
             text = i_sChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "i_s")
                     jsonString = dropDownTojSON(jsonString, expression, "i_s", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "i_s", "")
                 }
             }
             text = u_a_c_tChooseLabel.text
@@ -370,12 +416,18 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "u_a_c_t")
                     jsonString = dropDownTojSON(jsonString, expression, "u_a_c_t", text_1)
                 }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "u_a_c_t", "")
+                }
             }
             text = i_d_eChooseLabel.text
             if let text_1 = text{
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "i_d_e")
                     jsonString = dropDownTojSON(jsonString, expression, "i_d_e", text_1)
+                }
+                else{
+                    jsonString = dropDownTojSON(jsonString, expression, "i_d_e", "")
                 }
             }
             jsonString.removeLast()
