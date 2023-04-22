@@ -22,7 +22,9 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     var path: String?
     var text: String?
     let choose:String = "Choose"
-    
+    var jsonString:String = "{"
+    var trimmedString: String = ""
+    var expression: String = "\"" + ":" + " "
     //le_s starts here
     @IBOutlet weak var le_sView: UIView!
     
@@ -240,10 +242,14 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             text = f_e.text
             if let text_1 = text {
                 demoDict?.setValue(text_1, forKey: "f_e")
+                trimmedString = text_1.trimmingCharacters(in: .whitespaces)
+               
             }
             text = b_e.text
             if let text_1 = text {
                 demoDict?.setValue(text_1, forKey: "b_e")
+                trimmedString = text_1.trimmingCharacters(in: .whitespaces)
+
             }
             text = d_t_w_e.text
             if let text_1 = text {
@@ -254,73 +260,127 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 demoDict?.setValue(text_1, forKey: "b_uid_r")
             }
             text = le_sChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "le_s")
+            if let text_1 = text{
+                if (text_1 != choose){
+                   demoDict?.setValue(text, forKey: "le_s")
+                   jsonString = dropDownTojSON(jsonString, expression, "le_s", text_1)
+                }
             }
             text = a_sChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "a_s")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "a_s")
+                    jsonString = dropDownTojSON(jsonString, expression, "a_s", text_1)
+                }
             }
             text = dt_s_tChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "dt_s_t")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "dt_s_t")
+                    jsonString = dropDownTojSON(jsonString, expression, "dt_s_t", text_1)
+                }
             }
             text = le_tknChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "le_tkn")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "le_tkn")
+                    jsonString = dropDownTojSON(jsonString, expression, "le_tkn", text_1)
+                }
             }
             text = d_s_r_iChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "d_s_r_i")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "d_s_r_i")
+                    jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", text_1)
+                }
             }
             text = p_f_tChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "p_f_t")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "p_f_t")
+                    jsonString = dropDownTojSON(jsonString, expression, "p_f_t", text_1)
+                }
             }
             text = p_f_sChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "p_f_s")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "p_f_s")
+                    jsonString = dropDownTojSON(jsonString, expression, "p_f_s", text_1)
+                }
             }
             text = d_tChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "d_t")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "d_t")
+                    jsonString = dropDownTojSON(jsonString, expression, "d_t", text_1)
+                }
             }
             text = e_b_cChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "e_b_c")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "e_b_c")
+                    jsonString = dropDownTojSON(jsonString, expression, "e_b_c", text_1)
+                }
             }
             text = e_e_tChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "e_e_t")
+            if let text_1 = text{
+                if(text_1 != choose){
+                    demoDict?.setValue(text, forKey: "e_e_t")
+                    jsonString = dropDownTojSON(jsonString, expression, "e_b_c", text_1)
+                }
             }
             text = cid_exChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "cid_ex")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "cid_ex")
+                    jsonString = dropDownTojSON(jsonString, expression, "cid_ex", text_1)
+                }
             }
             text = g_sChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "g_s")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "g_s")
+                    jsonString = dropDownTojSON(jsonString, expression, "g_s", text_1)
+                }
             }
             text = in_sChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "in_s")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "in_s")
+                    jsonString = dropDownTojSON(jsonString, expression, "in_s", text_1)
+                }
             }
             text = m_s_tChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "m_s_t")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "m_s_t")
+                    jsonString = dropDownTojSON(jsonString, expression, "m_s_t", text_1)
+                }
             }
             text = i_sChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "i_s")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "i_s")
+                    jsonString = dropDownTojSON(jsonString, expression, "i_s", text_1)
+                }
             }
             text = u_a_c_tChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "u_a_c_t")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "u_a_c_t")
+                    jsonString = dropDownTojSON(jsonString, expression, "u_a_c_t", text_1)
+                }
             }
             text = i_d_eChooseLabel.text
-            if text != choose{
-                demoDict?.setValue(text, forKey: "i_d_e")
+            if let text_1 = text{
+                if (text_1 != choose){
+                    demoDict?.setValue(text, forKey: "i_d_e")
+                    jsonString = dropDownTojSON(jsonString, expression, "i_d_e", text_1)
+                }
             }
+            jsonString.removeLast()
+            jsonString = jsonString + "}"
+            print(jsonString)
             demoDict?.write(toFile: plistPath_1, atomically: true)
         }
         
@@ -508,6 +568,29 @@ extension UIViewController{
             chooseLabel.textColor = .black
         }
         return chooseLabel.text ?? "NULL"
+    }
+    
+    func stringHasNumber(_ string:String) -> Bool {
+        for character in string{
+            if character.isNumber{
+                return true
+            }
+        }
+        return false
+    }
+    
+    func dropDownTojSON (_ jsonString: String,_ expression: String, _ key: String, _ text: String) -> String {
+        var jsonString_1 = jsonString
+        jsonString_1 = jsonString_1 + "\"" + key + expression
+        let boolean = stringHasNumber(text)
+        if (boolean == true)
+        {
+            jsonString_1 = jsonString_1 + text + ","
+        }
+        else{
+            jsonString_1 = jsonString_1 + "\"" + text + "\"" + ","
+        }
+        return jsonString_1
     }
     
 }
