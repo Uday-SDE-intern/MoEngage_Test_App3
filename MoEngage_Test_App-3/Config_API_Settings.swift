@@ -34,7 +34,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var le_sChooseLabel: UILabel!
     let le_sDropDown = DropDown()
-    let le_sValArray = ["Allowed","Blocked"]
+    let le_sValArray = ["allowed","blocked"]
     //le_s ends here
     
     
@@ -47,7 +47,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var a_sChooseLabel: UILabel!
     let a_sDropDown = DropDown()
-    let a_sValArray = ["Allowed","Blocked"]
+    let a_sValArray = ["allowed","blocked"]
     //a_s ends here
     
     //dt_s_t starts here
@@ -71,7 +71,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var le_tknChooseLabel: UILabel!
     let le_tknDropDown = DropDown()
-    let le_tknValArray = ["Nil"]
+    let le_tknValArray = ["nil"]
     //le_tkn ends here
     
     //d_s_r_i starts here
@@ -107,7 +107,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var p_f_sChooseLabel: UILabel!
     let p_f_sDropDown = DropDown()
-    let p_f_sValArray = ["Allowed","Blocked"]
+    let p_f_sValArray = ["allowed","blocked"]
     //p_f_s ends here
     
     //d_t starts here
@@ -119,7 +119,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var d_tChooseLabel: UILabel!
     let d_tDropDown = DropDown()
-    let d_tValArray = ["Allowed","Blocked"]
+    let d_tValArray = ["allowed","blocked"]
     //d_t ends here
     
     //e_b_c starts here
@@ -143,7 +143,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var e_e_tChooseLabel: UILabel!
     let e_e_tDropDown = DropDown()
-    let e_e_tValArray = ["Allowed","Blocked"]
+    let e_e_tValArray = ["allowed","blocked"]
     //e_e_t ends here
     
     //cid_ex starts here
@@ -167,7 +167,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var g_sChooseLabel: UILabel!
     let g_sDropDown = DropDown()
-    let g_sValArray = ["Allowed","Blocked"]
+    let g_sValArray = ["allowed","blocked"]
     //g_s ends here
     
     //in_s starts here
@@ -179,7 +179,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var in_sChooseLabel: UILabel!
     let in_sDropDown = DropDown()
-    let in_sValArray = ["Allowed","Blocked"]
+    let in_sValArray = ["allowed","blocked"]
     //in_s ends here
     
     //m_s_t starts here
@@ -203,7 +203,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var i_sChooseLabel: UILabel!
     let i_sDropDown = DropDown()
-    let i_sValArray = ["Allowed","Blocked"]
+    let i_sValArray = ["allowed","blocked"]
     //i_s ends here
     
     //u_a_c_t starts here
@@ -243,21 +243,29 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             if let text_1 = text {
                 demoDict?.setValue(text_1, forKey: "f_e")
                 trimmedString = text_1.trimmingCharacters(in: .whitespaces)
-               
+                let modifiedText = self.modifiedOutputString(trimmedString)
+                jsonString = UITextFieldTojSOn(jsonString, expression, "f_e", modifiedText)
             }
             text = b_e.text
             if let text_1 = text {
                 demoDict?.setValue(text_1, forKey: "b_e")
                 trimmedString = text_1.trimmingCharacters(in: .whitespaces)
-
+                let modifiedText = self.modifiedOutputString(trimmedString)
+                jsonString = UITextFieldTojSOn(jsonString, expression, "b_e", modifiedText)
             }
             text = d_t_w_e.text
             if let text_1 = text {
                 demoDict?.setValue(text_1, forKey: "d_t_w_e")
+                trimmedString = text_1.trimmingCharacters(in: .whitespaces)
+                let modifiedText = self.modifiedOutputString(trimmedString)
+                jsonString = UITextFieldTojSOn(jsonString, expression, "d_t_w_e", modifiedText)
             }
             text = b_uid_r.text
             if let text_1 = text {
                 demoDict?.setValue(text_1, forKey: "b_uid_r")
+                trimmedString = text_1.trimmingCharacters(in: .whitespaces)
+                let modifiedText = self.modifiedOutputString(trimmedString)
+                jsonString = UITextFieldTojSOn(jsonString, expression, "b_uid_r", modifiedText)
             }
             text = le_sChooseLabel.text
             if let text_1 = text{
@@ -644,5 +652,21 @@ extension UIViewController{
         }
         return jsonString_1
     }
-    
+    func UITextFieldTojSOn (_ jsonString: String,_ expression: String, _ key: String, _ text: String) -> String {
+        var jsonString_1 = jsonString
+        let expression_1 = "\"\""
+        if (text != expression_1){
+            jsonString_1 = jsonString_1 + "\"" + key + expression + "[" + text + "]" + ","
+        }
+        else{
+            jsonString_1 = jsonString_1 + "\"" + key + expression + "[" + "   " + "]" + ","
+        }
+        return jsonString_1
+    }
+    func modifiedOutputString (_ text: String)->String{
+        let inputString = text
+        let outputStringArray = inputString.components(separatedBy: ",")
+        let outputString = outputStringArray.map { "\"\($0)\"" }.joined(separator: ",")
+         return outputString
+    }
 }
