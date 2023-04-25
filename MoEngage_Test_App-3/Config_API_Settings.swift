@@ -604,6 +604,48 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
         }
     }
     
+    func setupPostMethod() {
+        var urlRequest = URLRequest(url: URL(string: "")!)
+        urlRequest.httpMethod = "POST"
+        var jsonString_1 = jsonString
+        jsonString_1.removeFirst()
+        jsonString_1.removeLast()
+        let dataDictionary = [jsonString_1]
+        do{
+            let requestBody = try JSONSerialization.data(withJSONObject: dataDictionary, options: .prettyPrinted)
+            urlRequest.httpBody = requestBody
+            urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
+        }
+        catch let error{
+            debugPrint(error.localizedDescription)
+        }
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard let data = data else {
+                if error == nil{
+                    print(error?.localizedDescription ?? "No data found here")
+                }
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse{
+                guard (200 ... 299) ~= response.statusCode else {
+                    print("Status code :- \(response.statusCode)")
+                    print(response)
+                    return
+                }
+            }
+            
+            do{
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                print(json)
+            }catch let error{
+                print(error.localizedDescription)
+            }
+        }.resume()
+        
+    }
+   
     
 }
 extension UIViewController{
