@@ -3,4 +3,54 @@
    uuid = "9A918DF1-C318-41B5-B10C-ACE97AA11DE0"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0D7DC043-CA87-4E8E-B6AF-1F9FE8318183"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MoEngage_Test_App-3/Config_API_Settings.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
+            landmarkName = "Save(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0D7DC043-CA87-4E8E-B6AF-1F9FE8318183 - 3de11ac948ea7b53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoEngage_Test_App_3.Config_API_Settings.Save(Any) -&gt; ()"
+                  moduleName = "MoEngage_Test_App-3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/UIKit/MoEngage_Test_App-3/MoEngage_Test_App-3/Config_API_Settings.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "477"
+                  endingLineNumber = "477"
+                  offsetFromSymbolStart = "34944">
+               </Location>
+               <Location
+                  uuid = "0D7DC043-CA87-4E8E-B6AF-1F9FE8318183 - 3de11ac948ea7b53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MoEngage_Test_App_3.Config_API_Settings.Save(Any) -&gt; ()"
+                  moduleName = "MoEngage_Test_App-3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/UIKit/MoEngage_Test_App-3/MoEngage_Test_App-3/Config_API_Settings.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "477"
+                  endingLineNumber = "477"
+                  offsetFromSymbolStart = "34884">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

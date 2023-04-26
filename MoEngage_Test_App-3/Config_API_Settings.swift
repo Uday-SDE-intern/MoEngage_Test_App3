@@ -230,6 +230,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     let i_d_eValArray = ["2592000"]
     //i_d_e ends here
     
+    var dictionary = [String:Any]()
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -244,6 +246,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 demoDict?.setValue(text_1, forKey: "f_e")
                 trimmedString = text_1.trimmingCharacters(in: .whitespaces)
                 let modifiedText = self.modifiedOutputString(trimmedString)
+                dictionary["f_e"] = self.modifiedOutputString_1(trimmedString)
                 jsonString = UITextFieldTojSOn(jsonString, expression, "f_e", modifiedText)
             }
             text = b_e.text
@@ -251,6 +254,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 demoDict?.setValue(text_1, forKey: "b_e")
                 trimmedString = text_1.trimmingCharacters(in: .whitespaces)
                 let modifiedText = self.modifiedOutputString(trimmedString)
+                dictionary["b_e"] = self.modifiedOutputString_1(trimmedString)
                 jsonString = UITextFieldTojSOn(jsonString, expression, "b_e", modifiedText)
             }
             text = d_t_w_e.text
@@ -258,6 +262,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 demoDict?.setValue(text_1, forKey: "d_t_w_e")
                 trimmedString = text_1.trimmingCharacters(in: .whitespaces)
                 let modifiedText = self.modifiedOutputString(trimmedString)
+                dictionary["d_t_w_e"] = self.modifiedOutputString_1(trimmedString)
                 jsonString = UITextFieldTojSOn(jsonString, expression, "d_t_w_e", modifiedText)
             }
             text = b_uid_r.text
@@ -265,6 +270,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 demoDict?.setValue(text_1, forKey: "b_uid_r")
                 trimmedString = text_1.trimmingCharacters(in: .whitespaces)
                 let modifiedText = self.modifiedOutputString(trimmedString)
+                dictionary["b_uid_r"] = self.modifiedOutputString_1(trimmedString)
                 jsonString = UITextFieldTojSOn(jsonString, expression, "b_uid_r", modifiedText)
             }
             text = le_sChooseLabel.text
@@ -272,6 +278,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                    demoDict?.setValue(text, forKey: "le_s")
                    jsonString = dropDownTojSON(jsonString, expression, "le_s", text_1)
+                    dictionary["le_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "le_s", "")
@@ -282,6 +289,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "a_s")
                     jsonString = dropDownTojSON(jsonString, expression, "a_s", text_1)
+                    dictionary["a_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "a_s", "")
@@ -292,6 +300,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "dt_s_t")
                     jsonString = dropDownTojSON(jsonString, expression, "dt_s_t", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["dt_s_t"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "dt_s_t", "")
@@ -302,6 +312,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "le_tkn")
                     jsonString = dropDownTojSON(jsonString, expression, "le_tkn", text_1)
+                    dictionary["le_tkn"] = ""
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "le_tkn", "")
@@ -312,6 +323,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "d_s_r_i")
                     jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["d_s_r_i"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", "")
@@ -322,6 +335,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "p_f_t")
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_t", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["p_f_t"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_t", "")
@@ -332,6 +347,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "p_f_s")
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_s", text_1)
+                    dictionary["p_f_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_s", "")
@@ -342,6 +358,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "d_t")
                     jsonString = dropDownTojSON(jsonString, expression, "d_t", text_1)
+                    dictionary["d_t"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "d_t", "")
@@ -352,6 +369,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "e_b_c")
                     jsonString = dropDownTojSON(jsonString, expression, "e_b_c", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["e_b_c"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "e_b_c", "")
@@ -362,6 +381,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if(text_1 != choose){
                     demoDict?.setValue(text, forKey: "e_e_t")
                     jsonString = dropDownTojSON(jsonString, expression, "e_e_t", text_1)
+                    dictionary["e_e_t"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "e_e_t", "")
@@ -373,6 +393,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "cid_ex")
                     jsonString = dropDownTojSON(jsonString, expression, "cid_ex", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["cid_ex"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "cid_ex", "")
@@ -383,6 +405,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "g_s")
                     jsonString = dropDownTojSON(jsonString, expression, "g_s", text_1)
+                    dictionary["g_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "g_s", "")
@@ -393,6 +416,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "in_s")
                     jsonString = dropDownTojSON(jsonString, expression, "in_s", text_1)
+                    dictionary["in_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "in_s", "")
@@ -403,6 +427,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "m_s_t")
                     jsonString = dropDownTojSON(jsonString, expression, "m_s_t", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["m_s_t"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "m_s_t", "")
@@ -413,6 +439,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "i_s")
                     jsonString = dropDownTojSON(jsonString, expression, "i_s", text_1)
+                    dictionary["i_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "i_s", "")
@@ -423,6 +450,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "u_a_c_t")
                     jsonString = dropDownTojSON(jsonString, expression, "u_a_c_t", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["u_a_c_t"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "u_a_c_t", "")
@@ -433,6 +462,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "i_d_e")
                     jsonString = dropDownTojSON(jsonString, expression, "i_d_e", text_1)
+                    let IntegerValue = Int(text_1)
+                    dictionary["i_d_e"] = IntegerValue
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "i_d_e", "")
@@ -442,6 +473,8 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             jsonString = jsonString + "}"
             print(jsonString)
             demoDict?.write(toFile: plistPath_1, atomically: true)
+            print(dictionary)
+            self.setupPostMethod(dictionary)
         }
         
     }
@@ -604,13 +637,16 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
         }
     }
     
-    func setupPostMethod() {
-        var urlRequest = URLRequest(url: URL(string: "")!)
+    func setupPostMethod(_ myDictionary: [String:Any]) {
+        var urlRequest = URLRequest(url: URL(string: "http://127.0.0.1:8000/v3/sdkconfig/ios/12345")!)
         urlRequest.httpMethod = "POST"
         var jsonString_1 = jsonString
         jsonString_1.removeFirst()
         jsonString_1.removeLast()
-        let dataDictionary = [jsonString_1]
+      /*  let dataDictionary: [String:Any] = ["f_e":["1234567"],"le_s":"blocked","a_s":"allowed","dt_s_t":"10800","le_tkn":"","d_s_r_i":1800,"p_f_t":60,"p_f_s":"allowed","b_e":["IN_APP_CHECK_FAILURE","NOTIFICATION_CLEARED_MOE"],"d_t":"allowed","e_b_c":30,"e_e_t":"blocked","cid_ex":2419200000,"g_s":"allowed","in_s":"allowed","d_t_w_e":["event1","event2"],"m_s_t":10800,"i_s":"allowed","u_a_c_t":1800,"i_d_e":2592000,"b_uid_r":["^$|0|[-]?1|null"]] */
+        
+       // print(dataDictionary)
+        let dataDictionary: [String:Any] = myDictionary
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: dataDictionary, options: .prettyPrinted)
             urlRequest.httpBody = requestBody
@@ -701,7 +737,7 @@ extension UIViewController{
             jsonString_1 = jsonString_1 + "\"" + key + expression + "[" + text + "]" + ","
         }
         else{
-            jsonString_1 = jsonString_1 + "\"" + key + expression + "[" + "   " + "]" + ","
+            jsonString_1 = jsonString_1 + "\"" + key + expression + "[" + " " + "]" + ","
         }
         return jsonString_1
     }
@@ -710,5 +746,10 @@ extension UIViewController{
         let outputStringArray = inputString.components(separatedBy: ",")
         let outputString = outputStringArray.map { "\"\($0)\"" }.joined(separator: ",")
          return outputString
+    }
+    func modifiedOutputString_1 (_ text: String)->[String]{
+        let inputString = text
+        let outputStringArray = inputString.components(separatedBy: ",")
+        return outputStringArray
     }
 }
