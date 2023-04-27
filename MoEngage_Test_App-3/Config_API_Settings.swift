@@ -640,12 +640,6 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     func setupPostMethod(_ myDictionary: [String:Any]) {
         var urlRequest = URLRequest(url: URL(string: "http://127.0.0.1:8000/v3/sdkconfig/ios/12345")!)
         urlRequest.httpMethod = "POST"
-        var jsonString_1 = jsonString
-        jsonString_1.removeFirst()
-        jsonString_1.removeLast()
-      /*  let dataDictionary: [String:Any] = ["f_e":["1234567"],"le_s":"blocked","a_s":"allowed","dt_s_t":"10800","le_tkn":"","d_s_r_i":1800,"p_f_t":60,"p_f_s":"allowed","b_e":["IN_APP_CHECK_FAILURE","NOTIFICATION_CLEARED_MOE"],"d_t":"allowed","e_b_c":30,"e_e_t":"blocked","cid_ex":2419200000,"g_s":"allowed","in_s":"allowed","d_t_w_e":["event1","event2"],"m_s_t":10800,"i_s":"allowed","u_a_c_t":1800,"i_d_e":2592000,"b_uid_r":["^$|0|[-]?1|null"]] */
-        
-       // print(dataDictionary)
         let dataDictionary: [String:Any] = myDictionary
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: dataDictionary, options: .prettyPrinted)
