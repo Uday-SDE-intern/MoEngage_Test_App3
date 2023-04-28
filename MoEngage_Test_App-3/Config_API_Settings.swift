@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 import DropDown
 class Config_API_Settings: UIViewController,UITextFieldDelegate {
 
@@ -133,7 +134,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     let e_b_cDropDown = DropDown()
     let e_b_cValArray = ["30"]
     //e_b_c ends here
-    
+        
     //e_e_t starts here
     @IBOutlet weak var e_e_tView: UIView!
     
@@ -324,7 +325,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                     demoDict?.setValue(text, forKey: "d_s_r_i")
                     jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", text_1)
                     let IntegerValue = Int(text_1)
-                    dictionary["d_s_r_i"] = IntegerValue
+                    dictionary["d_s_r_i"] = IntegerValue //checked upto this.
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "d_s_r_i", "")
@@ -347,7 +348,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 if (text_1 != choose){
                     demoDict?.setValue(text, forKey: "p_f_s")
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_s", text_1)
-                    dictionary["p_f_s"] = text_1
+                  dictionary["p_f_s"] = text_1
                 }
                 else{
                     jsonString = dropDownTojSON(jsonString, expression, "p_f_s", "")
@@ -474,7 +475,10 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             print(jsonString)
             demoDict?.write(toFile: plistPath_1, atomically: true)
             print(dictionary)
-            self.setupPostMethod(dictionary)
+            let dispatchQueue = DispatchQueue(label: "Queue Identification", qos: .background)
+            dispatchQueue.async {
+                self.setupPostMethod(self.dictionary)
+            }
         }
         
     }
@@ -640,6 +644,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
     func setupPostMethod(_ myDictionary: [String:Any]) {
         var urlRequest = URLRequest(url: URL(string: "http://127.0.0.1:8000/v3/sdkconfig/ios/12345")!)
         urlRequest.httpMethod = "POST"
+        
         let dataDictionary: [String:Any] = myDictionary
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: dataDictionary, options: .prettyPrinted)
@@ -675,7 +680,6 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
         }.resume()
         
     }
-   
     
 }
 extension UIViewController{
@@ -746,4 +750,5 @@ extension UIViewController{
         let outputStringArray = inputString.components(separatedBy: ",")
         return outputStringArray
     }
+    
 }
