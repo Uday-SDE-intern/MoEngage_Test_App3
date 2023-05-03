@@ -662,10 +662,11 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 }
                 return
             }
-            
+         //   var statusCode: Int?
             if let response = response as? HTTPURLResponse{
                 guard (200 ... 299) ~= response.statusCode else {
                     print("Status code :- \(response.statusCode)")
+                 //   statusCode = response.statusCode
                     print(response)
                     return
                 }
@@ -674,9 +675,21 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             do{
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
                 print(json)
+                
             }catch let error{
                 print(error.localizedDescription)
             }
+            
+          /*  if (statusCode == 201){
+                let alert = UIAlertController(title: "API Status", message: "Sent Successfully", preferredStyle: .alert)
+                self.present(alert,animated: true,completion: nil)
+            }
+            else{
+                let str = String(statusCode ?? 404)
+                let alert = UIAlertController(title: "API Status", message: str, preferredStyle: .alert)
+                self.present(alert,animated: true,completion: nil)
+            }*/
+                
         }.resume()
         
     }
