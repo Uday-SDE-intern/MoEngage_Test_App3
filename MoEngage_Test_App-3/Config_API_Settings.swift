@@ -479,6 +479,7 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             dispatchQueue.async {
                 self.setupPostMethod(self.dictionary)
             }
+//            self.setupPostMethod(self.dictionary)
         }
         
     }
@@ -662,14 +663,27 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
                 }
                 return
             }
-         //   var statusCode: Int?
+
             if let response = response as? HTTPURLResponse{
                 guard (200 ... 299) ~= response.statusCode else {
                     print("Status code :- \(response.statusCode)")
-                 //   statusCode = response.statusCode
+               //   statusCode = response.statusCode
+                    DispatchQueue.main.async {
+                        let alert1 = UIAlertController(title: "HTTP Post Status", message: "Status:404,Failure", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "OK", style: .default)
+                        alert1.addAction(action)
+                        self.present(alert1,animated: true,completion: nil)
+                    }
                     print(response)
                     return
                 }
+                DispatchQueue.main.async {
+                    let alert2 = UIAlertController(title: "HTTP Post Status", message: "Success", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default)
+                    alert2.addAction(action)
+                    self.present(alert2,animated: true,completion: nil)
+                }
+
             }
             
             do{
@@ -679,16 +693,6 @@ class Config_API_Settings: UIViewController,UITextFieldDelegate {
             }catch let error{
                 print(error.localizedDescription)
             }
-            
-          /*  if (statusCode == 201){
-                let alert = UIAlertController(title: "API Status", message: "Sent Successfully", preferredStyle: .alert)
-                self.present(alert,animated: true,completion: nil)
-            }
-            else{
-                let str = String(statusCode ?? 404)
-                let alert = UIAlertController(title: "API Status", message: str, preferredStyle: .alert)
-                self.present(alert,animated: true,completion: nil)
-            }*/
                 
         }.resume()
         
