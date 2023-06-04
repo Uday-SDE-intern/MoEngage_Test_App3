@@ -8,11 +8,11 @@
 import UIKit
 import MoEngageSDK
 class ViewController: UIViewController {
-
-    
     
     @IBAction func initialize_Config_API(_ sender: Any) {
-        initializeSDK()
+        
+        let initalizeSDK = InitializeMoESDK(appID: AppID.appID)
+        initalizeSDK.initializeSDK()
         let dtracking = self.storyboard?.instantiateViewController(withIdentifier: "Data_Tracking") as! Data_Tracking
         self.navigationController?.pushViewController(dtracking, animated: true)
     }
@@ -24,20 +24,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-    }
-    
-    func initializeSDK()
-    {
-        var sdkConfig = MoEngageSDKConfig(withAppID: "DAO6UGZ73D9RTK8B5W96TPYN")
-        sdkConfig.moeDataCenter = .data_center_01
-        sdkConfig.enableLogs = true
-              // Separate initialization methods for Dev and Prod initializations
-              #if DEBUG
-                  MoEngage.sharedInstance.initializeDefaultTestInstance(sdkConfig, sdkState: .enabled)
-              #else
-                  MoEngage.sharedInstance.initializeDefaultLiveInstance(sdkConfig, sdkState: .enabled)
-              #endif
+        
     }
     
 }
